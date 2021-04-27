@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  markserv:
+    image: thomsch98/markserv:latest
+    container_name: markserv
+    volumes:
+      - ./:/data
+    command: ["markserv", "-x", "-a", "0.0.0.0", "-p", "3080", "-l", "35730"]
+    #env_file: .env_test
+    #ports:                                                                                          
+    #  - 3080                                                                                        
+    #  - 35730                                                                                       
+    network_mode: "host" 
+
+
